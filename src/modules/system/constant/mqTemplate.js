@@ -1,0 +1,82 @@
+/**
+ * 模拟报文模板
+ */
+const template = {
+  otc: `<?xml version="1.0" encoding="UTF-8"?>
+    <EchoDisbursalAck>
+      <Header>
+        <System>CFT</System>
+        <LocalRef><!--LocalRef--></LocalRef>
+        <UniqueID><!--UniqueID--></UniqueID>
+      </Header>
+      <Body>
+        <Reference><!--Reference--></Reference>
+        <Status>COMPLETE</Status>
+        <InstrAmount><!--InstrAmount--></InstrAmount>
+        <InstrCurrency><!--InstrCurrency--></InstrCurrency>
+        <FXDetails>
+          <ExchRate><!--ExchRate--></ExchRate>
+          <CNVAmount><!--CNVAmount--></CNVAmount>
+          <CNVCurrency><!--CNVCurrency--></CNVCurrency>
+        </FXDetails>
+        <CrValuedate><!--CrValuedate--></CrValuedate>
+      </Body>
+    </EchoDisbursalAck>`,
+  giro: `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE GPRFeed SYSTEM "txupdate.dtd">
+    <GPRFeed>
+      <Header>
+        <ProcessingLoc><![CDATA[ASIA]]></ProcessingLoc>
+        <ServiceType><![CDATA[AsiaBSITxStatusUpdate]]></ServiceType>
+      </Header>
+      <Body>
+        <TxUpdateMsgChkgiro>
+          <BatchNumber><![CDATA[<!--BatchNumber-->]]></BatchNumber>
+          <TxReference><![CDATA[<!--TxReference-->]]></TxReference>
+          <Status><![CDATA[V]]></Status>
+          <ReasonCode><![CDATA[]]></ReasonCode>
+          <UTRNumber><![CDATA[<!--UTRNumber-->]]></UTRNumber>
+          <CustomerCode><![CDATA[731751002]]></CustomerCode>
+          <ProcLocCode><![CDATA[713]]></ProcLocCode>
+          <RecType><![CDATA[IBG]]></RecType>
+          <CurrCode><![CDATA[CNY]]></CurrCode>
+          <CustTxRefNumber><![CDATA[<!--TxReference-->]]></CustTxRefNumber>
+          <Amount><![CDATA[<!--Amount-->]]></Amount>
+          <Valuedate><![CDATA[20220810]]></Valuedate>
+          <ChargeWaived><![CDATA[0]]></ChargeWaived>
+          <DebitDate><![CDATA[<!--DebitDate-->]]></DebitDate>
+          <CubitId><![CDATA[LGRO]]></CubitId>
+          <DebitAccNumber><![CDATA[1731751885]]></DebitAccNumber>
+          <ChkIssAccNumber><![CDATA[1730177026]]></ChkIssAccNumber>
+          <ChargingAccount><![CDATA[1731751818]]></ChargingAccount>
+          <BookingLocCode><![CDATA[SHA]]></BookingLocCode>
+          <InstDate><![CDATA[20220810]]></InstDate>
+          <PrintedIndicator><![CDATA[0]]></PrintedIndicator>
+          <DeliveryMethod><![CDATA[MAIL]]></DeliveryMethod>
+          <BeneName><![CDATA[特瑞保轮胎工业(河北)有限公司]]></BeneName>
+          <MailToName><![CDATA[6220000770111]]></MailToName>
+          <MailToAddr1><![CDATA[testmail@163.com]]></MailToAddr1>
+          <CRN><![CDATA[]]></CRN>
+          <BeneAccNumber><![CDATA[6220000770111]]></BeneAccNumber>
+          <OnBehalfName><![CDATA[ALIBABA]]></OnBehalfName>
+          <BeneAddr1><![CDATA[testmail@163.com]]></BeneAddr1>
+          <BeneBankCode><![CDATA[403671]]></BeneBankCode>
+          <BeneBranchCode><![CDATA[660012]]></BeneBranchCode>
+          <BeneBankName><![CDATA[中国邮政储蓄银行有限责任公司高县支行]]></BeneBankName>
+          <BeneAdviceReqFlag><![CDATA[0]]></BeneAdviceReqFlag>
+          <BeneChargeText><![CDATA[OUR]]></BeneChargeText>
+          <ProductCode><![CDATA[LIBG]]></ProductCode>
+          <ProcessingDate><![CDATA[20220808]]></ProcessingDate>
+          <DisbInstNumber><![CDATA[50031499]]></DisbInstNumber>
+          <DDEBatchNumber><![CDATA[1]]></DDEBatchNumber>
+          <PaymentOrderNumber><![CDATA[1]]></PaymentOrderNumber>
+          <PDCFlag><![CDATA[0]]></PDCFlag>
+          <ReplPymtAmount><![CDATA[13319.40]]></ReplPymtAmount>
+          <ReplBeneName><![CDATA[特瑞保轮胎工业(河北)有限公司]]></ReplBeneName>
+          <ReplYourReference><![CDATA[ECO2022180814571700008]]></ReplYourReference>
+        </TxUpdateMsgChkgiro>
+      </Body>
+    </GPRFeed>
+  `,
+};
+export default template;
