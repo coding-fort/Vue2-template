@@ -41,7 +41,7 @@ const writeFile = (path, content) => {
  */
 const readPackage = () => {
   return new Promise((resolve) => {
-    const packagePath = path.resolve(__dirname, "../package.json");
+    const packagePath = path.resolve(__dirname, "../../package.json");
     readFile(packagePath).then((content) => {
       resolve(JSON.parse(content));
     });
@@ -53,7 +53,7 @@ const readPackage = () => {
  */
 const writePackage = (content) => {
   return new Promise((resolve) => {
-    const packagePath = path.resolve(__dirname, "../package.json");
+    const packagePath = path.resolve(__dirname, "../../package.json");
     writeFile(packagePath, JSON.stringify(content, null, 2)).then(() => {
       resolve();
     });
@@ -64,16 +64,17 @@ const writePackage = (content) => {
  * 删除文件
  */
 const removePackageLock = () => {
-  const packagePath = path.resolve(__dirname, "../package-lock.json");
-  return new Promise((resolve, reject) => {
-    fs.unlink(packagePath, (err) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve();
-      }
-    });
-  });
+  return Promise.resolve();
+  // const packagePath = path.resolve(__dirname, "../package-lock.json");
+  // return new Promise((resolve, reject) => {
+  //   fs.unlink(packagePath, (err) => {
+  //     if (err) {
+  //       reject(err);
+  //     } else {
+  //       resolve();
+  //     }
+  //   });
+  // });
 };
 
 module.exports = {
